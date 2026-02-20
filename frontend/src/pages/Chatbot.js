@@ -31,7 +31,7 @@ function Chatbot() {
       setCurrentChatId(null);
       setMessages([]);
     }
-  }, [user?.id]);
+  }, [user]);
 
   useEffect(() => {
     if (darkMode) {

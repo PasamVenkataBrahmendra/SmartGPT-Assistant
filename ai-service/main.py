@@ -5,6 +5,8 @@ from typing import Optional, List
 import os
 from dotenv import load_dotenv
 
+from routers.rag import router as rag_router
+
 load_dotenv()
 
 app = FastAPI(title="AI Chatbot Service", version="1.0.0")
@@ -30,6 +32,9 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     response: str
     status: str = "success"
+
+# Include RAG routes (upload PDF, ask questions)
+app.include_router(rag_router)
 
 # Health check endpoint
 @app.get("/health")

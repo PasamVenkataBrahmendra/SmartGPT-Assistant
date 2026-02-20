@@ -103,6 +103,11 @@ The app uses JWT-based authentication:
 - `POST /api/chat` - Process chat message with AI
 - `GET /health` - Health check endpoint
 
+### FastAPI RAG (PDF Q&A)
+- `POST /api/rag/upload` - Upload a PDF (multipart form, file field)
+- `POST /api/rag/ask` - Ask a question (body: `{"question": "...", "top_k": 5}`)
+- `GET /api/rag/documents` - List indexed document IDs
+
 ## Environment Variables
 
 ### Backend (.env)
